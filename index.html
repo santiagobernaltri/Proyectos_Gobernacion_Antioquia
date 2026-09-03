@@ -59,13 +59,13 @@
       position: absolute;
       top: 100%;
       right: 0;
-      margin-top: 8px;
+      margin-top: 10px;
       background: rgba(15, 23, 42, 0.95);
       border: 1px solid #10b981;
       color: #ffffff;
-      padding: 8px 12px;
-      border-radius: 12px;
-      font-size: 0.75rem;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.78rem;
       font-weight: 700;
       display: flex;
       align-items: center;
@@ -82,14 +82,14 @@
       content: '';
       position: absolute;
       top: -6px;
-      right: 25px;
+      right: 35px;
       width: 0; height: 0;
       border-left: 6px solid transparent;
       border-right: 6px solid transparent;
       border-bottom: 6px solid #10b981;
     }
 
-    .scroll-instruction-tooltip .arrow-icon { font-size: 1rem; color: #10b981; }
+    .scroll-instruction-tooltip .arrow-icon { font-size: 0.9rem; color: #10b981; }
 
     @keyframes pulseBounce {
       0%, 100% { transform: translateY(0); }
@@ -279,7 +279,10 @@
       border-radius: 12px; padding: 12px 14px; margin-bottom: 12px;
     }
     .process-bubble .step { font-size: 0.7rem; color: #475569; font-weight: 800; text-transform: uppercase; }
-    .process-bubble .title { font-size: clamp(0.95rem, 2.5vw, 1.1rem); font-weight: 800; margin: 4px 0; color: #0f172a; line-height: 1.3; }
+    .process-bubble .title {
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem); font-weight: 800; margin: 4px 0; color: #0f172a; line-height: 1.3;
+      min-height: 2.6em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    }
     .process-bubble .time { font-size: 0.8rem; color: #b45309; font-weight: 800; margin-top: 2px; }
 
     .card-avatar-flex { display: flex; align-items: center; gap: 12px; }
@@ -289,7 +292,10 @@
       display: flex; align-items: center; justify-content: center; padding: 4px; flex-shrink: 0;
       overflow: hidden;
     }
-    .card-info h3 { font-size: 0.88rem; color: #0f172a; font-weight: 800; }
+    .card-info h3 {
+      font-size: 0.88rem; color: #0f172a; font-weight: 800; line-height: 1.3;
+      min-height: 2.6em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    }
     .card-info p.role { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; }
 
     .click-hint {
@@ -528,20 +534,20 @@
       { phaseId: 0, phaseName: "INICIO", stage: "PRESENTACIÓN", step: "0", title: "Impuesto Vehicular", time: "Flujo Integral", person: "Gobernación de Antioquia", role: "Secretaría de Hacienda", entity: "Cobro Coactivo", desc: "Punto de partida del sistema.", colorClass: "gob" },
       { phaseId: 1, phaseName: "ETAPA 1", stage: "RECEPCIÓN DATA", step: "1", title: "Entrega DATA Inicial", time: "1 Día Base", person: "Liliana Taborda", role: "Profesional Universitaria", entity: "Gobernación de Antioquia", desc: "Traspaso formal de la base de datos que entrega Ingresos.", colorClass: "gob" },
       { phaseId: 1, phaseName: "ETAPA 1", stage: "RECEPCIÓN DATA", step: "2", title: "Recepción Lote Inicial", time: "1 Día Base", person: "Juan Diego Ríos", role: "Coordinador Operativo", entity: "Informática y Tributos", desc: "La entidad Informática y Tributos recibe formalmente los datos para su validación.", colorClass: "it" },
-      { phaseId: 1, phaseName: "ETAPA 1", stage: "RECEPCIÓN DATA", step: "3", title: "Filtro RUNT / RUES", time: "15 Días Hábiles", person: "Liliana Taborda", role: "Profesional Universitaria", entity: "Gobernación de Antioquia", desc: "Cruce de datos y depuración basada en la información que Informática y Tributos provee sobre difuntos y cilindraje.", colorClass: "gob" },
+      { phaseId: 1, phaseName: "ETAPA 1", stage: "RECEPCIÓN DATA", step: "3", title: "Filtro RUNT / RUES", time: "15 Días Hábiles", person: "Juan Diego Ríos, Anderson Restrepo", role: "Profesional Universitaria", entity: "Informática y Tributos", desc: "Cruce de datos y depuración basada en la información que Informática y Tributos provee sobre difuntos y cilindraje.", colorClass: "it" },
       { phaseId: 1, phaseName: "ETAPA 1", stage: "RECEPCIÓN DATA", step: "4", title: "Partidas Abiertas", time: "10 Días Hábiles", person: "Alexander Arias", role: "Servidor Público", entity: "Gobernación de Antioquia", desc: "Se envía la población a SAP con el fin de validar que las carteras aún presenten saldo.", colorClass: "gob" },
-      { phaseId: 1, phaseName: "ETAPA 1", stage: "RECEPCIÓN DATA", step: "5", title: "Cargue Lote Definitivo", time: "1 Día", person: "Juan Diego Ríos", role: "Coordinador Operativo", entity: "Informática y Tributos", desc: "Importación de los datos depurados a Taxation Smart.", colorClass: "it" },
+      { phaseId: 1, phaseName: "ETAPA 1", stage: "RECEPCIÓN DATA", step: "5", title: "Cargue Lote Definitivo", time: "1 Día", person: "Juan Diego Ríos, Anderson Restrepo", role: "Coordinador Operativo", entity: "Informática y Tributos", desc: "Importación de los datos depurados a Taxation Smart para dar inicio al procesamiento y creación de actos.", colorClass: "it" },
       { phaseId: 2, phaseName: "ETAPA 2", stage: "INICIO", step: "1", title: "Creación Lote de Inicio", time: "1 Día", person: "Juan Diego Ríos, Anderson Restrepo, Laura Orozco", role: "Ingenieros Operativos", entity: "Informática y Tributos", desc: "Se define en el sistema el tipo de distribución y los funcionarios a los que serán asignados los procesos; en paralelo, se verifica la inexistencia de novedades para cada obligación.", colorClass: "it" },
       { phaseId: 2, phaseName: "ETAPA 2", stage: "INICIO", step: "2", title: "Expedientes Digitales", time: "5 Días", person: "Natacha Ramírez", role: "Encargada Mercurio", entity: "Servisoft - Mercurio", desc: "Creación de expedientes por cada placa perteneciente al lote de procesamiento.", colorClass: "mercurio" },
-      { phaseId: 2, phaseName: "ETAPA 2", stage: "INICIO", step: "3", title: "Radicados Mandamientos", time: "20 Horas", person: "Juan Diego Ríos, Anderson Restrepo, Laura Orozco", role: "Ingenieros Operativos", entity: "Informática y Tributos", desc: "Inicio del proceso juridico, se realiza el envio de los archivos realizados por Taxation Smart a Mercurio para su radicación, El gestor documental toma los .word enviados por Taxation Smart, y asigna radicado, firma y codigo de barras entregando un PDF que es guardado y asociado a al proceso juridico correcto para su correcta visualización desde las consultas de los funcionarios.", colorClass: "it" },
+      { phaseId: 2, phaseName: "ETAPA 2", stage: "INICIO", step: "3", title: "Radicados Mandamientos", time: "20 Horas", person: "Juan Diego Ríos, Anderson Restrepo, Laura Orozco, Servisoft (Mercurio)", role: "Ingenieros Operativos", entity: "Informática y Tributos, Servisoft (Mercurio)", desc: "Inicio del proceso juridico, se realiza el envio de los archivos realizados por Taxation Smart a Mercurio para su radicación, El gestor documental toma los .word enviados por Taxation Smart, y asigna radicado, firma y codigo de barras entregando un PDF que es guardado y asociado a al proceso juridico correcto para su correcta visualización desde las consultas de los funcionarios.", colorClass: "it" },
       { phaseId: 2, phaseName: "ETAPA 2", stage: "INICIO", step: "4", title: "Recepción de Radicados Mandamientos de Pago", time: "3 Horas", person: "Juan Diego Ríos, Anderson Restrepo, Laura Orozco", role: "Ingenieros Operativos", entity: "Informática y Tributos", desc: "El sistema Taxation Smart recibe los actos en PDF y procede a guardarlos y asociarlos al proceso juridico en relación, para su correcta visualización desde las consultas de los funcionarios.", colorClass: "it" },
       { phaseId: 3, phaseName: "ETAPA 3", stage: "ACUMULACIÓN", step: "1", title: "Acumulacion de procesos", time: "4 Horas", person: "Juan Diego Ríos, Anderson Restrepo, Laura Orozco", role: "Ingenieros Operativos", entity: "Informática y Tributos", desc: "El sistema selecciona los MAP y se agrupan en un solo acto múltiples vehículos pertenecientes a un mismo propietario.", colorClass: "it" },
-      { phaseId: 3, phaseName: "ETAPA 3", stage: "ACUMULACIÓN", step: "2", title: "Radicacion Acumulacion", time: "23 Horas", person: "Juan Diego Ríos, Anderson Restrepo, Laura Orozco", role: "Ingenieros Operativos", entity: "Informática y Tributos", desc: "Se realiza el envio de radicación de los actos de acumulacion con el gestor documental Mercurio.", colorClass: "it" },
-      { phaseId: 3, phaseName: "ETAPA 3", stage: "ACUMULACIÓN", step: "3", title: "Recepcion Radicados Acumulación de procesos", time: "3 Horas", person: "Juan Diego Ríos, Anderson Restrepo, Laura Orozco", role: "Ingenieros Operativos", entity: "Informática y Tributos", desc: "El sistema Taxation Smart recibe los actos en PDF y procede a guardarlos y asociarlos al proceso juridico en relación, para su correcta visualización desde las consultas de los funcionarios.", colorClass: "it" },
-      { phaseId: 4, phaseName: "ETAPA 4", stage: "MEDIDA CAUTELAR", step: "1", title: "Inicio Medida Cautelar", time: "4 Horas", person: "Juan Diego Ríos, Anderson Restrepo, Laura Orozco", role: "Ingenieros Operativos", entity: "Informática y Tributos", desc: "Se realiza la creación del archivo del lote con los sujetos seleccionados para el inicio de la medida cautelar.", colorClass: "it" },
-      { phaseId: 4, phaseName: "ETAPA 4", stage: "MEDIDA CAUTELAR", step: "2", title: "Radicacion orden de bloqueos bancarios", time: "3 Horas", person: "Juan Diego Ríos, Anderson Restrepo, Laura Orozco", role: "Ingenieros Operativos", entity: "Informática y Tributos", desc: "Radicación de las resoluciones y del único oficio de orden de bloqueos.", colorClass: "it" },
+      { phaseId: 3, phaseName: "ETAPA 3", stage: "ACUMULACIÓN", step: "2", title: "Radicacion Acumulacion", time: "23 Horas", person: "Juan Diego Ríos, Anderson Restrepo, Laura Orozco, Servisoft (Mercurio)", role: "Ingenieros Operativos", entity: "Informática y Tributos, Servisoft (Mercurio)", desc: "Se realiza el envio de radicación de los actos de acumulacion con el gestor documental Mercurio.", colorClass: "it" },
+      { phaseId: 3, phaseName: "ETAPA 3", stage: "ACUMULACIÓN", step: "3", title: "Recepcion Radicados Acumulación de procesos", time: "3 Horas", person: "Juan Diego Ríos, Anderson Restrepo, Laura Orozco", role: "Ingenieros Operativos", entity: "Informática y Tributos", desc: "El sistema Taxation Smart recibe los actos en PDF y procede a guardarlos y asociarlos al proceso juridico en relación, para su correcta visualización desde las consultas de los funcionarios, terminando la etapa de Inicio del procesamiento del lote y proceder a Medidas Cautelares.", colorClass: "it" },
+      { phaseId: 4, phaseName: "ETAPA 4", stage: "MEDIDA CAUTELAR", step: "1", title: "Inicio Medida Cautelar", time: "4 Horas", person: "Juan Diego Ríos, Anderson Restrepo, Laura Orozco", role: "Ingenieros Operativos", entity: "Informática y Tributos", desc: "Se realiza la creación del archivo del lote con los sujetos seleccionados para el inicio de la medida cautelar, archivo que contiene la unión de los procesos de Mandamientos de Pago y Acumulación.", colorClass: "it" },
+      { phaseId: 4, phaseName: "ETAPA 4", stage: "MEDIDA CAUTELAR", step: "2", title: "Radicacion orden de bloqueos bancarios", time: "3 Horas", person: "Juan Diego Ríos, Anderson Restrepo, Laura Orozco, Servisoft (Mercurio)", role: "Ingenieros Operativos", entity: "Informática y Tributos, Servisoft (Mercurio)", desc: "Radicación de las resoluciones y del único oficio de orden de bloqueos.", colorClass: "it" },
       { phaseId: 4, phaseName: "ETAPA 4", stage: "MEDIDA CAUTELAR", step: "3", title: "Notificacion bloqueo bancario", time: "28 Horas", person: "Juan Diego Ríos, Anderson Restrepo, Laura Orozco", role: "Ingenieros Operativos", entity: "Informática y Tributos", desc: "Envío notificacion bancaria con el ordenamiento de generar bloqueos bancarios a deudores de impuesto vehicular, notificacion enviada usando el correo institucional sistemas.tesoreria@antioquia.gov.co designado unicamente para estas notificaciones.", colorClass: "it" },
-      { phaseId: 5, phaseName: "ETAPA 5", stage: "LEVANTAMIENTO CAUTELAR", step: "1", title: "Orden de Levantamiento de bloqueos bancarios", time: "Diariamente", person: "Juan Diego Ríos, Anderson Restrepo, Laura Orozco", role: "Ingenieros Operativos", entity: "Informática y Tributos", desc: "Se realiza la notificacion bancaria con el ordenamiento de levantamiento de medidas cautelares por subsanación de deuda, actividad que se desarrolla de manera diaria revisando actualizaciones de novedades de pagos.", colorClass: "it" }
+      { phaseId: 5, phaseName: "ETAPA 5", stage: "LEVANTAMIENTO CAUTELAR", step: "1", title: "Orden de Levantamiento de bloqueos bancarios", time: "Diariamente", person: "Juan Diego Ríos, Anderson Restrepo, Laura Orozco", role: "Ingenieros Operativos", entity: "Informática y Tributos", desc: "Se ejecuta la notificación bancaria de los ordenamientos de levantamiento de medidas cautelares por concepto de subsanación de deuda. Esta actividad se desarrolla de manera diaria mediante la revisión continua de las novedades de pago. Dichos registros se actualizan en el sistema Taxation Smart al día siguiente hábil de haberse efectuado la transacción: el pago procesado por el contribuyente impacta el sistema SAP y es transmitido a Taxation Smart durante la madrugada del día posterior, permitiendo generar e informar el levantamiento de la medida cautelar exactamente al día siguiente de realizada la subsanación de la obligación.", colorClass: "it" }
     ];
 
     document.getElementById('totalStepsMetric').innerText = `${rawData.length} Pasos`;
