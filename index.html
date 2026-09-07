@@ -508,6 +508,7 @@
   </div>
 
   <script>
+    /* LÓGICA DE CÁLCULO DE TIEMPOS ACTUALIZADA */
     function calculateTime(val) {
       const num = parseFloat(val);
       const resultEl = document.getElementById('timeResult');
@@ -517,15 +518,14 @@
         return;
       }
       
-      // Redondeo hacia arriba para evitar decimales
+      // Cálculo con redondeo hacia arriba para eliminar decimales
       let days = Math.ceil((num / 100000) * 33);
       
-      // Mínimo 1 día de demora
+      // Garantizar que el mínimo sea 1 día
       if (days < 1) {
         days = 1;
       }
       
-      // Ajuste de singular / plural
       const label = days === 1 ? "día hábil" : "días hábiles";
       resultEl.innerText = `${days} ${label}`;
     }
@@ -539,7 +539,6 @@
       if (cls === 'it') return LOGO_IT;
       return LOGO_SERVISOFT;
     }
-  </script>
 
     const rawData = [
       { phaseId: 0, phaseName: "INICIO", stage: "PRESENTACIÓN", step: "0", title: "Impuesto Vehicular", time: "Flujo Integral", person: "Gobernación de Antioquia", role: "Secretaría de Hacienda", entity: "Cobro Coactivo", desc: "Punto de partida del sistema.", colorClass: "gob" },
